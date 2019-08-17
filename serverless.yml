@@ -55,18 +55,18 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: src/handler.hello
+  homepage:
+    handler: src/site/homepage.handler
     events:
       - http:
-          path: hello
+          path: /
           method: GET
-  auth:
-    handler: src/auth/index.handler
+  auth-signup:
+    handler: src/auth/signup.handler
     events:
       - http:
-          path: /auth/{any+}
-          method: ANY
+          path: /auth/signup
+          method: POST
 
 #    Define function environment variables here
 #    environment:
