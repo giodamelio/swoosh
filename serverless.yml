@@ -61,6 +61,12 @@ functions:
       - http:
           path: hello
           method: GET
+  auth:
+    handler: src/auth/index.handler
+    events:
+      - http:
+          path: /auth/{any+}
+          method: ANY
 
 #    Define function environment variables here
 #    environment:
